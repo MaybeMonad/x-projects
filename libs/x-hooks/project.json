@@ -1,0 +1,42 @@
+{
+  "root": "libs/x-hooks",
+  "sourceRoot": "libs/x-hooks/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/x-hooks",
+        "tsConfig": "libs/x-hooks/tsconfig.lib.json",
+        "project": "libs/x-hooks/package.json",
+        "entryFile": "libs/x-hooks/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "assets": [
+          {
+            "glob": "libs/x-hooks/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/x-hooks/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/x-hooks"],
+      "options": {
+        "jestConfig": "libs/x-hooks/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
