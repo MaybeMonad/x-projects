@@ -1,8 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "x-form": "libs/x-form",
     "x-hooks": "libs/x-hooks",
     "x-projects": "apps/x-projects",
-    "x-projects-e2e": "apps/x-projects-e2e"
+    "x-projects-e2e": "apps/x-projects-e2e",
+    "x-state": "libs/x-state"
   }
 }

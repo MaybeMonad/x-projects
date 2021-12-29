@@ -1,0 +1,42 @@
+{
+  "root": "libs/x-state",
+  "sourceRoot": "libs/x-state/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/x-state",
+        "tsConfig": "libs/x-state/tsconfig.lib.json",
+        "project": "libs/x-state/package.json",
+        "entryFile": "libs/x-state/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "assets": [
+          {
+            "glob": "libs/x-state/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/x-state/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/x-state"],
+      "options": {
+        "jestConfig": "libs/x-state/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

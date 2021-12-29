@@ -1,0 +1,42 @@
+{
+  "root": "libs/x-form",
+  "sourceRoot": "libs/x-form/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/x-form",
+        "tsConfig": "libs/x-form/tsconfig.lib.json",
+        "project": "libs/x-form/package.json",
+        "entryFile": "libs/x-form/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "assets": [
+          {
+            "glob": "libs/x-form/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/x-form/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/x-form"],
+      "options": {
+        "jestConfig": "libs/x-form/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

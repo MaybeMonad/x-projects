@@ -199,8 +199,11 @@ export function useRequest<P, R, S> (
                     actions: (context, event) => {
                       const { result, onRequestComplete } = event?.data ?? {}
                       try {
-                        const { onSuccess, formatResult, lastRequestParams } =
+                        const { cacheOptions, lastRequestParams } =
                           context ?? {}
+                        const { onSuccess, formatResult } =
+                          cacheOptions.current ?? {}
+
                         const _result =
                           formatResult?.(result, lastRequestParams) ?? result
 

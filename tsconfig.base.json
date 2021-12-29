@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@x-projects/x-hooks": ["libs/x-hooks/src/index.ts"]
+      "@x-projects/x-form": ["libs/x-form/src/index.ts"],
+      "@x-projects/x-hooks": ["libs/x-hooks/src/index.ts"],
+      "@x-projects/x-state": ["libs/x-state/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
